@@ -1,0 +1,18 @@
+.wrapper-drawer {
+
+}
+.wrapper-drawer .ant-drawer-header {
+  border-bottom: 1px solid #F9AE2E;
+}
+.wrapper-drawer .ant-drawer-title ,
+.wrapper-drawer .ant-drawer-close {
+  color: #F9AE2E;
+}
+.wrapper-drawer .ant-card {
+  padding: 0;
+}
+.wrapper-drawer .ant-card ,
+.wrapper-drawer .ant-card-bordered {
+  border: unset;
+  box-shadow: unset;
+}

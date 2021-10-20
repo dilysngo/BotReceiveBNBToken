@@ -1,0 +1,73 @@
+.table-stake-his {
+  margin-bottom: 40px;
+}
+.ant-card {
+  position: relative;
+  max-width: 1000px;
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 0 10px #dddddd;
+  margin: 0 auto;
+  padding: 12px 20px;
+}
+.ant-card table {
+  font-size: 15px;
+}
+
+.ant-card .ant-table-thead > tr > th {
+  padding: 16px ​24px 12px;
+  border-bottom: 1px solid #ffb12c !important;
+}
+.ant-card .ant-table-tbody > tr > td {
+  border-bottom: unset !important;
+}
+.ant-table-thead > tr > th, 
+.ant-table-tbody > tr > td, 
+.ant-table tfoot > tr > th, 
+.ant-table tfoot > tr > td {
+  padding: 6px 16px;
+}
+.ant-card-head {
+  padding: 0;
+  border-bottom: unset;
+}
+.ant-card .ant-table-measure-row {
+  display: none;
+}
+.ant-card .ant-card-head-wrapper {
+  height: 100%;
+}
+.ant-card .ant-card-head-title {
+  color: #F9AE2E;
+  font-weight: 600;
+  padding: 10px ​0;
+}
+.ant-card .ant-card-body {
+  padding: 0;
+}
+.ant-card .ant-table {
+  /* border-top: 1px solid #ffb12c !important; */
+  background-color: transparent;
+}
+.ant-card .ant-table .ant-table-cell {
+  color: #F9AE2E;
+  background-color: transparent;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.ant-card .ant-table-tbody > tr.ant-table-row:hover > td {
+  background: #fbebcb;
+}
+.ant-card .ant-table .ant-table-cell:first-child {
+  padding-left: 0;
+}
+.ant-card .ant-empty .ant-empty-description {
+  color: #F9AE2E;
+}
+
+.ant-card .ant-pagination-item-ellipsis,
+.ant-card .ant-pagination .ant-select-selector,
+.ant-card .ant-pagination .ant-pagination-item-active {
+  color: #ffb12c;
+  border-color: #ffb12c;
+}

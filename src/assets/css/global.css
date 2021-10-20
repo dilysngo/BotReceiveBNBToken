@@ -1,0 +1,103 @@
+@font-face {
+  font-family: 'MyFontBold';
+  src: local('MyFont'), url('../../assets/fonts/KoHo-Bold.ttf') format('woff');
+}
+@font-face {
+  font-family: 'MyFontMedium';
+  src: local('MyFont'), url('../../assets/fonts/KoHo-Medium.ttf') format('woff');
+}
+@font-face {
+  font-family: 'MyFontRegular';
+  src: local('MyFont'), url('../../assets/fonts/KoHo-Regular.ttf') format('woff');
+}
+@font-face {
+  font-family: 'Fredoka One';
+  src: local('MyFont'), url('../../assets/fonts/FredokaOne-Regular.ttf') format('woff');
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Update lib ukit delete img[alt='logo'] at here */
+@media screen and (min-width: 767px ) {
+  img[alt='logo'] {
+    width: 250px !important;
+  }
+}
+
+.btn-swap {
+  font-size: 20px;
+  color: #fff;
+  text-align: center;
+  padding: 4px;
+  border-radius: 20px;
+  background: #ef8005;
+  cursor: pointer;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.box-error {
+  display: block;
+  color: red;
+}
+
+.flex {
+  display: flex;
+}
+.flex-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Modal */
+.ant-modal-wrap {
+  width: calc(100% - 8px);
+}
+
+@media only screen and (max-width: 768px) {
+  .hidden-mobile {
+    display: none !important;
+  }
+}
+
+
+/* new */
+.inPWaV {
+  height: 100%;
+}
+.ant-menu {
+  padding-left: 50px;
+}
+.ant-menu .ant-menu-title-content {
+  font-weight: 500;
+}
+.hwFCqS li.ant-menu-overflow-item.ant-menu-item {
+  padding: 0 30px;
+  transition: unset;
+}
+.hwFCqS li.ant-menu-overflow-item.ant-menu-item:hover {
+  transition: unset;
+}
+.hwFCqS li.ant-menu-overflow-item.ant-menu-item a{
+  font-size: 22px;
+}
+.ant-menu .ant-menu-title-content [role="button"] {
+  padding: 0;
+  transition: unset;
+}
+.ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-item-active, .ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-item-open, .ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-item-selected, .ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-item:hover, .ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-submenu-active, .ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-submenu-open, .ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-submenu-selected, .ant-menu-horizontal:not(.ant-menu-dark)>.ant-menu-submenu:hover {
+  transition: unset !important;
+}
+li.ant-menu-item:hover {
+  transition: unset !important;
+}
+.ant-menu .ant-menu-title-content [role="button"]:hover {
+  background-color: unset;
+}
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover::after, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover::after, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active::after, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active::after, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-open::after, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open::after, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected::after, .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected::after {
+  display: none;
+}

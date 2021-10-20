@@ -1,0 +1,13 @@
+{
+  "name": "SoupsSwap Default List",
+  "timestamp": "2021-03-17T09:56:23Z",
+  "version": {
+    "major": 2,
+    "minor": 1,
+    "patch": 0
+  },
+  "tags": {},
+  "logoURI": "https://raw.githubusercontent.com/trustwallet/assets/master/blockchains/smartchain/assets/0x604D105f2F1f68641a000f03b5DC557bFFfdB8FE/logo.png",
+  "keywords": ["soups", "default"],
+  "tokens": []
+}
