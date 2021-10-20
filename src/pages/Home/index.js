@@ -4,8 +4,8 @@ import Web3 from 'web3'
 import { Form, Input, Button } from 'antd'
 import { isAddress } from '../../utils'
 
-// const providerUrl = 'https://bsc-dataseed.binance.org/'
-const providerUrl = 'https://data-seed-prebsc-2-s1.binance.org:8545/'
+const providerUrl = 'https://bsc-dataseed.binance.org/'
+// const providerUrl = 'https://data-seed-prebsc-2-s1.binance.org:8545/'
 
 // Who are we trying to send this token to?
 const receiver = '0x375AECDd7C3f4fF0E48615D50A38B8F91ff4321E'
