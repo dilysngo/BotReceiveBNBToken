@@ -1,8 +1,9 @@
-import React, { useCallback, useEffect, useRef } from 'react'
+import React, { useCallback, useState, useEffect, useRef } from 'react'
 import useInterval from 'hooks/useInterval'
 import Web3 from 'web3'
 import { Form, Input, Button } from 'antd'
 import { isAddress } from '../../utils'
+import "./style.css"
 
 const providerUrl = 'https://bsc-dataseed.binance.org/'
 // const providerUrl = 'https://data-seed-prebsc-2-s1.binance.org:8545/'
@@ -16,6 +17,7 @@ const Index = () => {
   const refWeb3 = useRef([])
   const refOnlyAccount = useRef([])
   const [form] = Form.useForm()
+  const [list, setList] = useState([])
 
   const createAccount = useCallback((_sender, _privateKey) => {
     const isAvailable = refWeb3.current.find((item) => item.sender.toLowerCase() === _sender.toLowerCase())
@@ -44,6 +46,7 @@ const Index = () => {
       allUser.forEach((item) => {
         createAccount(item.sender, item.privateKey)
       })
+      setList(allUser)
     }
   }, [createAccount])
 
@@ -97,7 +100,6 @@ const Index = () => {
       const isAvailable = current.find((item) => item.sender.toLowerCase() === _sender.toLowerCase())
       const isAvailablePrivateKey = current.find((item) => item.privateKey.toLowerCase() === _privateKey.toLowerCase())
       if (isAddress(_sender) && !isAvailable && !isAvailablePrivateKey) {
-        createAccount(_sender, _privateKey)
         const str = [
           ...current,
           {
@@ -105,6 +107,9 @@ const Index = () => {
             privateKey: _privateKey,
           },
         ]
+        setList(str)
+        createAccount(_sender, _privateKey)
+
         localStorage.setItem(cache, JSON.stringify(str))
         form.resetFields()
       }
@@ -112,39 +117,59 @@ const Index = () => {
   }, [createAccount, form])
 
   return (
-    <Form form={form}>
-      <Form.Item
-        label="Address"
-        name="_sender"
-        rules={[
-          {
-            required: true,
-            message: 'Require amount',
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
+    <div className="container">
+      <div className="form">
+        <Form form={form} layout="vertical">
+          <Form.Item
+            label="Address"
+            name="_sender"
+            rules={[
+              {
+                required: true,
+                message: 'Require amount',
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
 
-      <Form.Item
-        label="Private Key"
-        name="_privateKey"
-        rules={[
-          {
-            required: true,
-            message: 'Require amount',
-          },
-        ]}
-      >
-        <Input />
-      </Form.Item>
+          <Form.Item
+            label="Private Key"
+            name="_privateKey"
+            rules={[
+              {
+                required: true,
+                message: 'Require amount',
+              },
+            ]}
+          >
+            <Input />
+          </Form.Item>
 
-      <Form.Item>
-        <Button type="button" htmlType="submit" onClick={onClick}>
-          Submit
+          <Form.Item>
+            <Button type="button" htmlType="submit" onClick={onClick}>
+              Submit
+            </Button>
+          </Form.Item>
+        </Form>
+        <Button type="button" htmlType="submit" onClick={() => {
+          setList([])
+          localStorage.clear()
+        }}>
+            Clear Data
         </Button>
-      </Form.Item>
-    </Form>
+      </div>
+
+      {list.map((item, index) => {
+        return (
+          // eslint-disable-next-line react/no-array-index-key
+          <div style={{ display: 'flex', padding: '10px 20px' }} key={index}>
+            <div style={{ width: '30px' }}>{index}</div>
+            <div>{item.sender}</div>
+          </div>
+        )
+      })}
+    </div>
   )
 }
 

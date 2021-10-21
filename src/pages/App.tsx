@@ -5,11 +5,11 @@ import React, { Suspense, useState } from 'react'
 import { HashRouter, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components'
 import Home from "pages/Home/index"
+import Random from "pages/Random/index"
 import { TranslationsContext } from '../hooks/TranslationsContext'
 import { LanguageContext } from '../hooks/LanguageContext'
 import Web3ReactManager from '../components/Web3ReactManager'
 import Popups from '../components/Popups'
-import Menu from '../components/Menu' 
 
 const AppWrapper = styled.div`
   display: flex;
@@ -53,17 +53,16 @@ export default function App() {
         <AppWrapper>
           <LanguageContext.Provider value={{ selectedLanguage, setSelectedLanguage, translatedLanguage, setTranslatedLanguage }}>
             <TranslationsContext.Provider value={{ translations, setTranslations }}>
-              <Menu>
-                <BodyWrapper>
-                  <Popups />
-                  <Web3ReactManager>
-                    <Switch>
-                      <Route exact strict path="/" component={Home} />
-                    </Switch>
-                  </Web3ReactManager>
-                  <Marginer />
-                </BodyWrapper>
-              </Menu>
+              <BodyWrapper>
+                <Popups />
+                <Web3ReactManager>
+                  <Switch>
+                    <Route exact strict path="/" component={Home} />
+                    <Route exact strict path="/random" component={Random} />
+                  </Switch>
+                </Web3ReactManager>
+                <Marginer />
+              </BodyWrapper>
             </TranslationsContext.Provider>
           </LanguageContext.Provider>
         </AppWrapper>

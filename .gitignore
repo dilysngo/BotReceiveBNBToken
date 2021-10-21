@@ -10,8 +10,7 @@ sftp-config.json
 /coverage
 
 # production
-/dist
-/build
+LivePage
 
 # misc
 .DS_Store
